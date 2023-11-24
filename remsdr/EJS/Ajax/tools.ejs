@@ -33,14 +33,14 @@ switch(cmd[1]) {
 		var C="lsusb";
 		break;
 		case "HackRFinfo":
-		var C="sudo python3 /remsdr/PYtools/HackRF_info.py";
+		var C=" python3 /remsdr/PYtools/HackRF_info.py";
 		break;
 		case "HackRFSoapy":
 		var C='SoapySDRUtil --probe="driver=hackrf"';
 		break;
 		
 		case "RTLSDRinfo":
-		var C="sudo python3 /remsdr/PYtools/RTLSDRinfo.py";
+		var C=" python3 /remsdr/PYtools/RTLSDRinfo.py";
 		break;
 		case "RTLSDRSoapy":
 		var C='SoapySDRUtil --probe="driver=rtlsdr"';
@@ -49,29 +49,29 @@ switch(cmd[1]) {
 		var C='SoapySDRUtil --probe="driver=sdrplay"';
 		break;
 		case "RebootOPI":
-		var C="sudo reboot";
+		var C=" reboot";
 		break;
 		case "Shutdown":
-		var C="sudo halt";
+		var C=" halt";
 		break;
 		case "SA818test":
-		var C="sudo python3 /remsdr/PYtools/SA818test.py";
+		var C=" python3 /remsdr/PYtools/SA818test.py";
 		break;
 		case "RxGpredict":
-		var C="sudo python3 /remsdr/PYtools/Gpredict.py RX";
+		var C=" python3 /remsdr/PYtools/Gpredict.py RX";
 		break;
 		case "TxGpredict":
-		var C="sudo python3 /remsdr/PYtools/Gpredict.py TX";
+		var C=" python3 /remsdr/PYtools/Gpredict.py TX";
 		break;
 		case "OmniRigTest":
-		var C="sudo python3 /remsdr/PYtools/OmnirigTest.py";
+		var C=" python3 /remsdr/PYtools/OmnirigTest.py";
 		break;
 		case "PlutoHelp":
 		console.log("pluro")
-		var C="sudo python3 /remsdr/PYtools/PlutoRead.py Help";
+		var C=" python3 /remsdr/PYtools/PlutoRead.py Help";
 		break;
 		case "PlutoReboot":
-		var C="sudo python3 /remsdr/PYtools/PlutoRead.py Reboot";
+		var C=" python3 /remsdr/PYtools/PlutoRead.py Reboot";
 		break;
 		case "PlutoSoapy":
 		var C='SoapySDRUtil --probe="driver=plutosdr"';

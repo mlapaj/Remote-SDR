@@ -23,17 +23,21 @@ if (info_cpu.indexOf("aarch64") > 0) {
         GPIO_Oscil = "74";
     }
 }
-var Fan_Pin = new Gpio(GPIO_Fan, 'out');
+// disable
+// var Fan_Pin = new Gpio(GPIO_Fan, 'out');
+
 function ReadTemperature() {
     var adr_Temp = '/sys/class/thermal/thermal_zone0/temp';
     fs.readFile(adr_Temp, 'utf8', function (err, data) { //Asynchrone read
         var T = Math.floor(parseInt(data) / 1000);
         Temperature = T + '°C';
         if (T >= 65) {
-            Fan_Pin.write(1);
+	    // disable
+            //Fan_Pin.write(1);
             Fan_State = "On";
         } else {
-            Fan_Pin.write(0);
+	    // disable
+            //Fan_Pin.write(0);
             Fan_State = "Off";
         }
     });
@@ -41,9 +45,11 @@ function ReadTemperature() {
 //
 //Oscillator when TX
 //*******************
-var Oscil_Pin = new Gpio(GPIO_Oscil, 'out');
+
+//var Oscil_Pin = new Gpio(GPIO_Oscil, 'out');
 var Oscil_state = 0;
-Oscil_Pin.write(Oscil_state);
+//Oscil_Pin.write(Oscil_state);
+
 function ToggleOscil() {
     Oscil_state = (Oscil_state + 1) % 2;
     Oscil_Pin.write(Oscil_state);

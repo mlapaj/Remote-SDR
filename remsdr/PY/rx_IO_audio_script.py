@@ -10,7 +10,7 @@ import math
 
 
 # get local machine name
-host = 'localhost'                           
+host = '127.0.0.1'                           
 
 
 port_audio_web = 8001

@@ -1,3 +1,31 @@
+## Intro
+
+My fork for of Remote SDR for Docker.  
+You can use it together with your distro instead put whole image to pi
+Tested on RPI4 with passive box (no fan)  
+
+## HOWTO - all needs to be done on RPI4 (used original system):
+
+### Using docker 
+
+1. clone repo and install docker
+2. create docker image: `sudo docker build -t rpi_remotesdr .`
+4. run docker container: `sudo docker run -p 443:443 -p 8002:8002 --privileged -v remsdr_data:/remsdr/data  -v /dev/bus/usb:/dev/bus/usb rpi_remotesdr`
+7. open browser and log to https://localhost
+
+### Using docker-compose
+as docker plugin:  
+
+`sudo docker compose -f Docker-compose.yaml build`  
+`sudo docker compose -f Docker-compose.yaml up`
+
+as docke compose stanalone 
+
+`docker-compose -f Docker-compose.yaml build`  
+`docker-compose -f Docker-compose.yaml up`
+ 
+
+----- BELOW IS ORIGINAL README ----
 # Remote-SDR
 Remote-SDR remotely controls a SDR receiver and a SDR transmitter from a web browser. Pre-configured for the QO-100 Es'Hail 2 satellite transponder. Can be used for any NBFM, SSB or CW Radio from 1MHz up to 6 GHz. It can works in full duplex with Adalm-Pluto SDR, HackRF One, RTL-SDR, RSP1, RSP1A or SA818.
 Signal processing is done using gnuradio-companion and javascript. It runs  on an Orange Pi Zero 2 with Armbian (Bullseye). It runs since version 2.4 on Raspberry 4 using Rasperry Pi OS.

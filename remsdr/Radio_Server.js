@@ -76,8 +76,8 @@ const io = new Server(httpserver, {
 httpserver.listen(80);
 //HTTPS Server
 const options = {
-    key: fs.readFileSync('/remsdr/selfsigned.key'),
-    cert: fs.readFileSync('/remsdr/selfsigned.crt')
+    key: fs.readFileSync('/remsdr/data/selfsigned.key'),
+    cert: fs.readFileSync('/remsdr/data/selfsigned.crt')
 };
 const https_Server = https.createServer(options, app).listen(443);
 const ioS = new Server(https_Server, {

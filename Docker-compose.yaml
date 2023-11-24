@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  rpi_remotesdr:
+    build: .
+    image: rpi_remotesdr
+    privileged: true
+    ports:
+      - "8124:443"
+    volumes:
+      - /remsdr/data
+      - /dev/bus/usb:/dev/bus/usb

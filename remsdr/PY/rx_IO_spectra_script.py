@@ -117,7 +117,7 @@ async def send_Packet(writer):
 
 async def main_Local_Server():
     
-    server = await asyncio.start_server(handle_Local_Server, host, port_spectre_web)
+    server = await asyncio.start_server(handle_Local_Server, "127.0.0.1", port_spectre_web)
 
     addr = server.sockets[0].getsockname()
     print(f'Serving on {addr}')

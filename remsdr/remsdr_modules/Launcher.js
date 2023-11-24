@@ -22,6 +22,7 @@ function RXlaunchGR(CPUshort, SDRrx) {
 			var sn=SDRrx.substr(6); //Serial Number
 		}
 		
+	console.log("LAPAJ:!!!!! ",rx_sdr_name);
         switch (rx_sdr_name) {
 			
         case "hackrf":
